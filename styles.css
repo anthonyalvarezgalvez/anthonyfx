@@ -77,7 +77,7 @@ img { display: block; max-width: 100%; }
 .site-header nav a[aria-current="page"]::after { width: 100%; }
 
 .hero { position: relative; min-height: 100svh; overflow: hidden; background: #161310; color: #fff; }
-.hero-poster { position: absolute; inset: 0; background: url("https://i.ytimg.com/vi/LZholmCgMnw/maxresdefault.jpg") center/cover; transform: scale(1.03); }
+.hero-poster { position: absolute; inset: 0; background: url("https://i.ytimg.com/vi/kv-GLb0Ywm8/maxresdefault.jpg") center/cover; transform: scale(1.03); }
 .video-shell { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .video-shell iframe { position: absolute; top: 50%; left: 50%; width: 177.78vh; min-width: 100%; height: 56.25vw; min-height: 100%; transform: translate(-50%,-50%) scale(1.04); border: 0; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,6,5,.72), rgba(7,6,5,.18) 65%), linear-gradient(0deg, rgba(7,6,5,.64), transparent 55%); }
@@ -129,6 +129,9 @@ img { display: block; max-width: 100%; }
 .project-visual { position: relative; aspect-ratio: 16/10; overflow: hidden; background-color: #292622; background-size: cover; background-position: center; }
 .project-video { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #111; }
 .project-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.project-panel-status { color: inherit !important; opacity: .5; }
+.project-video-empty { display: grid; place-items: center; border: 1px solid var(--line); background: rgba(206, 148, 88, .06); }
+.project-video-empty > span { font-family: Arial, Helvetica, sans-serif; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; opacity: .48; }
 .project-visual::before { content: ""; position: absolute; inset: 0; transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s; }
 .project-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(150deg, transparent 45%, rgba(0,0,0,.55)); }
 .project-visual span { position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(.8); width: 96px; height: 96px; border-radius: 50%; background: var(--paper); display: grid; place-items: center; opacity: 0; font-family: Arial, sans-serif; font-size: 10px; letter-spacing: .12em; transition: opacity .3s, transform .3s; }
@@ -215,6 +218,61 @@ footer h2 em { font-weight: 300; color: #15110f; }
 .footer-bottom { margin-top: 72px; display: grid; grid-template-columns: 1fr auto auto; gap: 32px; align-items: end; }
 .footer-bottom img { width: min(340px, 40vw); filter: brightness(0) invert(1); }
 .footer-bottom p { margin: 0; }
+
+/* Home palette: Tierra Cinematica */
+.home-page {
+  --ink: #2d2422;
+  --paper: #e4ebee;
+  --paper-soft: #efcfc0;
+  --accent: #ce9458;
+  --rust: #7d2c10;
+  --line: rgba(228, 235, 238, .22);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.home-page .site-header {
+  color: var(--paper);
+  border-color: rgba(228, 235, 238, .28);
+}
+.home-page .site-header nav a::after { background: var(--paper-soft); }
+.home-page .hero { background: var(--ink); color: var(--paper); }
+.home-page .hero-shade {
+  background:
+    linear-gradient(90deg, rgba(44, 35, 32, .60), rgba(44, 35, 32, .2) 65%),
+    linear-gradient(0deg, rgba(44, 35, 32, .50), transparent 58%);
+}
+.home-page .eyebrow,
+.home-page .hero-role { color: var(--paper-soft); }
+.home-page .circle-link { border-color: rgba(239, 207, 192, .72); }
+.home-page .circle-link:hover,
+.home-page .circle-link:focus-visible { background: var(--paper-soft); color: var(--ink); }
+
+.home-page .reel-section,
+.home-page .about-section,
+.home-page .projects-section,
+.home-page .tools-section { background: var(--ink); color: var(--paper); }
+.home-page .section-heading h2,
+.home-page .section-heading.compact h2,
+.home-page .tool-details h3 { color: var(--paper-soft); }
+.home-page .section-intro,
+.home-page .about-copy,
+.home-page .tool-details div > p { color: var(--paper); }
+.home-page .reel-caption a,
+.home-page .project-panel-heading span,
+.home-page .project-panel-heading a:hover,
+.home-page .project-panel-heading a:focus-visible,
+.home-page .tool-link { color: var(--accent); }
+.home-page .project-visual span { color: var(--ink); }
+
+.home-page footer { background: var(--rust); color: var(--paper); }
+.home-page footer h2 { color: var(--paper-soft); }
+.home-page footer h2 em { color: var(--accent); }
+.home-page .contact-link:hover,
+.home-page .contact-link:focus-visible { color: var(--paper-soft); }
+.home-page .social-link { background: var(--paper-soft); color: var(--ink); }
+.home-page .social-link:hover,
+.home-page .social-link:focus-visible { background: var(--ink); color: var(--paper); }
 
 @media (max-width: 800px) {
   .site-header { padding: 18px 20px; }
